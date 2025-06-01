@@ -1,15 +1,5 @@
 # 2.3 カスタムドメインの追加
 
----
-title: "カスタムドメインの追加"
-chapter: 2
-section: 3
-difficulty: ★★★
-estimated_time: "90分"
-prerequisites: ["テナント作成完了", "グローバル管理者権限", "ドメインのDNS管理権限"]
-updated: "2025-06-01"
----
-
 ## 📖 この章で学習すること
 
 - Microsoft 365でカスタムドメインを使用する意義と重要性
@@ -23,7 +13,7 @@ Microsoft 365では、初期状態で `your-organization.onmicrosoft.com` とい
 
 ### **ビジネス上の利点**
 
-- **ブランド信頼性の向上**: `tanaka@yourschool.edu.jp` のような独自ドメインは、`tanaka@yourschool.onmicrosoft.com` より信頼感を与える
+- **ブランド信頼性の向上**: `tanaka@yourschool.ac.jp` のような独自ドメインは、`tanaka@yourschool.onmicrosoft.com` より信頼感を与える
 - **メール配信性の改善**: 独自ドメインはスパムフィルターを通過しやすく、重要なメールが確実に届く
 - **統一されたブランディング**: 既存のWebサイトと同じドメインを使用することで、組織の一体感を演出
 
@@ -33,7 +23,7 @@ Microsoft 365では、初期状態で `your-organization.onmicrosoft.com` とい
 - **長期的な可搬性**: 将来的にサービスを変更する際も、ドメインを維持可能
 - **高度な機能の活用**: SPF、DKIM、DMARCなどのメールセキュリティ機能が利用可能
 
-> 💡 **教育機関の場合**: `.edu.jp` ドメインの使用により、教育機関としての正当性と信頼性を示すことができます。
+> 💡 **教育機関の場合**: `.ac.jp` ドメインの使用により、教育機関としての正当性と信頼性を示すことができます。
 
 ---
 
@@ -53,7 +43,7 @@ Microsoft 365では、初期状態で `your-organization.onmicrosoft.com` とい
 
 ```markdown
 ✅ チェックリスト
-□ 追加するドメイン名の決定（例：yourschool.edu.jp）
+□ 追加するドメイン名の決定（例：yourschool.ac.jp）
 □ ドメインレジストラーの管理画面へのアクセス情報
 □ DNSプロバイダーの管理画面へのアクセス情報
 □ 現在のDNS設定のバックアップ（推奨）
@@ -110,7 +100,7 @@ graph LR
 
 3. **ドメイン名の入力**
    ```
-   例: yourschool.edu.jp
+   例: yourschool.ac.jp
    ```
    - 追加したいドメイン名を正確に入力
    - **「このドメインを使用する」** をクリック
@@ -128,7 +118,7 @@ Microsoft 365では、ドメインの悪用を防ぐため、ドメインの所�
 2. **TXTレコード情報の確認**
    ```
    レコードタイプ: TXT
-   ホスト名: @ または yourschool.edu.jp
+   ホスト名: @ または yourschool.ac.jp
    値: MS=ms12345678（Microsoft 365が生成する一意の値）
    TTL: 3600（推奨）
    ```
@@ -192,7 +182,7 @@ Microsoft 365では、ドメインの悪用を防ぐため、ドメインの所�
 
 **確認が成功した場合**:
 ```
-✅ ドメイン yourschool.edu.jp の所有権が確認されました
+✅ ドメイン yourschool.ac.jp の所有権が確認されました
 ```
 
 **確認が失敗した場合**:
@@ -270,10 +260,10 @@ TTL: 3600
 1. **設定前の確認**
    ```bash
    # 現在のMXレコード確認（Windows PowerShell）
-   Resolve-DnsName -Name yourschool.edu.jp -Type MX
+   Resolve-DnsName -Name yourschool.ac.jp -Type MX
    
    # 現在のTXTレコード確認
-   Resolve-DnsName -Name yourschool.edu.jp -Type TXT
+   Resolve-DnsName -Name yourschool.ac.jp -Type TXT
    ```
 
 2. **段階的な設定**
@@ -283,10 +273,10 @@ TTL: 3600
 3. **設定完了後の確認**
    ```bash
    # MXレコードの確認
-   nslookup -type=MX yourschool.edu.jp
+   nslookup -type=MX yourschool.ac.jp
    
    # TXTレコードの確認
-   nslookup -type=TXT yourschool.edu.jp
+   nslookup -type=TXT yourschool.ac.jp
    ```
 
 ### **ステップ7: Microsoft 365での最終確認**
@@ -297,7 +287,7 @@ TTL: 3600
 
 **成功時の表示**:
 ```
-✅ yourschool.edu.jp の設定が完了しました
+✅ yourschool.ac.jp の設定が完了しました
 ✅ Exchange Online - 設定完了
 ✅ Microsoft Teams - 設定完了
 ✅ SharePoint Online - 設定完了
@@ -313,11 +303,11 @@ TTL: 3600
 
 1. **テストユーザーの作成**
    - 管理センター > **ユーザー** > **アクティブなユーザー** > **ユーザーの追加**
-   - メールアドレス: `test-user@yourschool.edu.jp`
+   - メールアドレス: `test-user@yourschool.ac.jp`
 
 2. **送信テスト**
    ```
-   差出人: test-user@yourschool.edu.jp
+   差出人: test-user@yourschool.ac.jp
    宛先: 外部のメールアドレス（Gmail等）
    件名: [テスト] Microsoft 365 カスタムドメイン設定確認
    ```
@@ -325,7 +315,7 @@ TTL: 3600
 3. **受信テスト**
    ```
    差出人: 外部のメールアドレス
-   宛先: test-user@yourschool.edu.jp
+   宛先: test-user@yourschool.ac.jp
    件名: [テスト] 外部からの受信確認
    ```
 
@@ -333,10 +323,10 @@ TTL: 3600
 
 ```powershell
 # Autodiscoverの動作確認
-Test-OutlookConnectivity -ProbeIdentity OutlookAutoDiscover -MailboxId test-user@yourschool.edu.jp
+Test-OutlookConnectivity -ProbeIdentity OutlookAutoDiscover -MailboxId test-user@yourschool.ac.jp
 
 # ActiveSync接続確認
-Test-ActiveSyncConnectivity -MailboxId test-user@yourschool.edu.jp
+Test-ActiveSyncConnectivity -MailboxId test-user@yourschool.ac.jp
 ```
 
 #### **3. SPFレコードの検証**
@@ -377,10 +367,10 @@ Test-ActiveSyncConnectivity -MailboxId test-user@yourschool.edu.jp
 **確認コマンド**:
 ```powershell
 # TXTレコードの確認
-nslookup -type=TXT yourschool.edu.jp
+nslookup -type=TXT yourschool.ac.jp
 
 # 期待される応答例
-# yourschool.edu.jp text = "MS=ms12345678"
+# yourschool.ac.jp text = "MS=ms12345678"
 ```
 
 ### **問題2: メールが送受信できない**
@@ -395,15 +385,15 @@ nslookup -type=TXT yourschool.edu.jp
 
 1. **MXレコードの確認**
    ```powershell
-   nslookup -type=MX yourschool.edu.jp
+   nslookup -type=MX yourschool.ac.jp
    
    # 期待される応答
-   # yourschool.edu.jp mail exchanger = 0 yourschool-edu-jp.mail.protection.outlook.com
+   # yourschool.ac.jp mail exchanger = 0 yourschool-edu-jp.mail.protection.outlook.com
    ```
 
 2. **SPFレコードの確認**
    ```powershell
-   nslookup -type=TXT yourschool.edu.jp
+   nslookup -type=TXT yourschool.ac.jp
    
    # 期待される応答例
    # "v=spf1 include:spf.protection.outlook.com -all"
@@ -412,7 +402,7 @@ nslookup -type=TXT yourschool.edu.jp
 3. **Exchange Online接続確認**
    ```powershell
    # Exchange Online PowerShellで接続テスト
-   Test-MAPIConnectivity -Identity test-user@yourschool.edu.jp
+   Test-MAPIConnectivity -Identity test-user@yourschool.ac.jp
    ```
 
 ### **問題3: Teams/Skype接続ができない**
@@ -427,8 +417,8 @@ Teams会議への参加時にエラー
 
 1. **SRVレコードの確認**
    ```powershell
-   nslookup -type=SRV _sip._tls.yourschool.edu.jp
-   nslookup -type=SRV _sipfederationtls._tcp.yourschool.edu.jp
+   nslookup -type=SRV _sip._tls.yourschool.ac.jp
+   nslookup -type=SRV _sipfederationtls._tcp.yourschool.ac.jp
    ```
 
 2. **Microsoft 365でのTeams設定確認**
@@ -447,7 +437,7 @@ Teams会議への参加時にエラー
 1. **既存レコードの確認と削除**
    ```powershell
    # 既存のMXレコード確認
-   nslookup -type=MX yourschool.edu.jp
+   nslookup -type=MX yourschool.ac.jp
    ```
 
 2. **段階的な移行計画**
@@ -482,7 +472,7 @@ Teams会議への参加時にエラー
 **月次確認項目**:
 ```powershell
 # 定期的なDNS確認スクリプト例
-$domain = "yourschool.edu.jp"
+$domain = "yourschool.ac.jp"
 
 # MXレコード確認
 $mx = Resolve-DnsName -Name $domain -Type MX
@@ -506,10 +496,10 @@ Write-Host "Autodiscover: $($autodiscover.NameHost)"
 Connect-ExchangeOnline
 
 # DKIMの有効化
-New-DkimSigningConfig -DomainName "yourschool.edu.jp" -Enabled $true
+New-DkimSigningConfig -DomainName "yourschool.ac.jp" -Enabled $true
 
 # DKIM設定確認
-Get-DkimSigningConfig -Identity "yourschool.edu.jp"
+Get-DkimSigningConfig -Identity "yourschool.ac.jp"
 ```
 
 #### **2. DMARC（Domain-based Message Authentication）設定**
@@ -518,7 +508,7 @@ Get-DkimSigningConfig -Identity "yourschool.edu.jp"
 DNSレコード追加:
 ホスト名: _dmarc
 タイプ: TXT
-値: v=DMARC1; p=quarantine; rua=mailto:dmarc-report@yourschool.edu.jp; pct=100
+値: v=DMARC1; p=quarantine; rua=mailto:dmarc-report@yourschool.ac.jp; pct=100
 ```
 
 #### **3. 定期的なセキュリティ監査**

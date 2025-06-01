@@ -50,7 +50,7 @@
 ## 🚀 クイックスタート
 
 ### 1️⃣ 学習パスを選択
-まず[📋 table-of-contents.md](table-of-contents.md)で、あなたの状況に最適な学習パスを選択してください：
+まず[📋 table-of-contents.md](table-of-contents.md)で、あなたの状況に最適な学習パスを選択してください。
 
 ```
 🔰 初心者向け（2週間）    → 基礎から段階的に学習
@@ -68,7 +68,7 @@
 - **推奨ブラウザ**: Microsoft Edge（最新版）
 
 ### 3️⃣ 学習開始
-選択した学習パスに従って、各章を順次学習します：
+選択した学習パスに従って、各章を順次学習します。
 
 | ステップ | 内容 | 所要時間 |
 |---------|------|----------|
@@ -120,7 +120,7 @@
 
 ## 🎯 学習パス選択
 
-あなたの状況に最適な学習順序を選択してください：
+あなたの状況に最適な学習順序を選択してください。
 
 <details>
 <summary><strong>🔰 初心者向け学習パス（約2週間）</strong></summary>
@@ -263,7 +263,7 @@ Microsoft 365関連の管理ポータル・サポートサイト：
 
 ### 🔄 最新情報の追跡
 
-Microsoft 365は頻繁にアップデートされるため、以下の方法で最新情報をキャッチアップしてください：
+Microsoft 365は頻繁にアップデートされるため、以下の方法で最新情報をキャッチアップしてください。
 
 - **📢 Message Center**: 管理センター内での公式アナウンス確認
 - **🛣️ Microsoft 365 Roadmap**: 今後の機能リリース予定
@@ -359,7 +359,7 @@ Microsoft 365は頻繁にアップデートされるため、以下の方法で�
 
 ### 📝 貢献・編集への参加
 
-このハンドブックの改善にご協力ください：
+このハンドブックの改善にご協力お願いします。
 
 1. **📖 誤字・脱字の修正**: 軽微な修正のPull Request歓迎
 2. **📸 スクリーンショット更新**: 最新UIに対応した画像提供
@@ -372,9 +372,9 @@ Microsoft 365は頻繁にアップデートされるため、以下の方法で�
 
 技術的な問題や製品固有の質問：
 
-- **📞 電話サポート**: 0120-996-680（教育機関向け）
-- **💻 オンラインサポート**: https://admin.microsoft.com > サポート
-- **🚀 FastTrack**: 150席以上で無料導入支援
+ - **📞 電話サポート**: 0120-167-400（教育機関向け）(平日 9:00～17:00)
+- **💻 オンラインサポート**: [https://admin.microsoft.com ](https://www.microsoft.com/ja-jp/biz/education/)
+- **🚀 [FastTrack](https://learn.microsoft.com/ja-jp/microsoft-365/fasttrack/eligibility)**: 対象プラン(Microsft 365 A3, A5)を150ライセンス以上保有している場合
 - **📚 Microsoft Learn**: https://learn.microsoft.com
 
 ---
@@ -425,3 +425,13 @@ Microsoft 365は頻繁にアップデートされるため、以下の方法で�
 ![GitHub Forks](https://img.shields.io/github/forks/nahisaho/m365-admin-handbook?style=social)
 
 </div>
+
+---
+
+[[次の節]](01-00-m365_overview_readme.md)
+
+---
+
+*📅 最終更新: 2025年6月1日*  
+*✍️ 更新者: Microsoft 365 ハンドブック編集チーム*  
+*📖 対象バージョン: Microsoft 365 (2025年6月版)*
